@@ -13,8 +13,8 @@ SPRITES_COLOR = (100, 100, 100)
 def start():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Dinosaur")
-    icon = pygame.image.load("assets/images/dino.png")
+    pygame.display.set_caption("T-rex")
+    icon = pygame.image.load("assets/images/dino-rex.png")
     pygame.display.set_icon(icon)
     pygame.mixer.music.load("assets/sounds/fon.wav")
     pygame.mixer.music.play(-1)
@@ -23,6 +23,7 @@ def start():
     dino = Dino(screen)
     cactuses = pygame.sprite.Group()
     pteros = pygame.sprite.Group()
+    marios = pygame.sprite.Group()
     stats = Stats()
     clock = pygame.time.Clock()
 
@@ -32,7 +33,7 @@ def start():
             if not stats.pause:
                 stats.update_time()
                 controls.move_dino(dino)
-                controls.create_and_remove_enemies(screen, cactuses, pteros, stats)
+                controls.create_and_remove_enemies(screen, cactuses, pteros, marios, stats)
                 controls.update(screen, screen_im, SPRITES_COLOR, dino,
                                 cactuses, pteros, stats)  # обновляем экран
             else:

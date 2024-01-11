@@ -96,7 +96,7 @@ def move_dino(dino):
         dino.jump()
 
 
-def create_and_remove_enemies(screen, cactuses, pteros, stats):
+def create_and_remove_enemies(screen, cactuses, pteros, marios, stats):
     for cactus in cactuses.copy():
         if cactus.rect.right < 0:
             cactuses.remove(cactus)
@@ -106,11 +106,11 @@ def create_and_remove_enemies(screen, cactuses, pteros, stats):
     spawn_deltas = (1, 1.25, 1.5, 1.75) if stats.score < 250 else (1.25, 1.5, 1.75)
     if stats.time / 60 >= choice(spawn_deltas):
         if stats.score // 10 < 100:
-            choice(easy_score)(screen, cactuses, pteros, stats)
+            choice(easy_score)(screen, cactuses, pteros, marios, stats)
         elif stats.score // 10 < 250:
-            choice(normal_score)(screen, cactuses, pteros, stats)
+            choice(normal_score)(screen, cactuses, pteros, marios, stats)
         else:
-            choice(hard_score)(screen, cactuses, pteros, stats)
+            choice(hard_score)(screen, cactuses, pteros, marios, stats)
         stats.time = 0
 
 
