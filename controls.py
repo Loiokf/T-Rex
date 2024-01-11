@@ -68,7 +68,7 @@ def update(screen, screen_image, sprites_color, dino, cactuses, pteros, stats):
     pygame.display.flip()
     if pygame.sprite.spritecollideany(dino, cactuses) or pygame.sprite.spritecollideany(dino, pteros):
         sound = pygame.mixer.Sound("assets/sounds/lose.wav")
-        sound.set_volume(0.3)
+        sound.set_volume(0.1)
         sound.play()
         stats.run = False
 
@@ -77,7 +77,7 @@ def lose(screen, dino, color, screen_image, cactuses, pteros, stats):
     dino.lose()
     draw_screen(screen, screen_image, color, dino, cactuses, pteros, stats)
     font = pygame.font.SysFont("times new roman", 30)
-    game_over_txt = font.render("Game Over! Press Enter to play again", True, color)
+    game_over_txt = font.render("YOU DIED! Press Enter to play again", True, color)
     rect = game_over_txt.get_rect()
     rect.midbottom = screen.get_rect().center
     screen.blit(game_over_txt, rect)
