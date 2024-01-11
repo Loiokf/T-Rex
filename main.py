@@ -11,12 +11,10 @@ SPRITES_COLOR = (100, 100, 100)
 
 def start():
     pygame.init()
-    pygame.mixer.music.load("assets/sounds/main_music.mp3")
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Dinosaur")
     icon = pygame.image.load("assets/images/dino.png")
     pygame.display.set_icon(icon)
-    pygame.mixer.music.play(-1)
 
     screen_im = ScreenImage(screen)
     dino = Dino(screen)
