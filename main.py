@@ -9,13 +9,16 @@ HEIGHT = 377
 SPRITES_COLOR = (100, 100, 100)
 
 
+
 def start():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Dinosaur")
     icon = pygame.image.load("assets/images/dino.png")
     pygame.display.set_icon(icon)
-
+    pygame.mixer.music.load("assets/sounds/fon.wav")
+    pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.01)
     screen_im = ScreenImage(screen)
     dino = Dino(screen)
     cactuses = pygame.sprite.Group()

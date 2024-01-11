@@ -68,6 +68,7 @@ def update(screen, screen_image, sprites_color, dino, cactuses, pteros, stats):
     pygame.display.flip()
     if pygame.sprite.spritecollideany(dino, cactuses) or pygame.sprite.spritecollideany(dino, pteros):
         sound = pygame.mixer.Sound("assets/sounds/lose.wav")
+        sound.set_volume(0.3)
         sound.play()
         stats.run = False
 

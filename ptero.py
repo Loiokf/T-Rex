@@ -5,7 +5,7 @@ class Ptero(pygame.sprite.Sprite):
     def __init__(self, screen, left, stats):
         super().__init__()
         self.screen = screen
-        self.image = pygame.image.load("assets/images/ptero.png")
+        self.image = pygame.image.load("assets/images/kamen.png")
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         self.rect.left = left
