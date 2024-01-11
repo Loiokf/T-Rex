@@ -30,7 +30,7 @@ class Dino:
 
     def jump(self):
         if self.jump_c == Dino.jump_height:
-            sound = pygame.mixer.Sound("assets/sounds/jump.wav")
+            sound = pygame.mixer.Sound("assets/sounds/jump.mp3")
             sound.play()
         if self.jump_c >= -Dino.jump_height:
             self.down -= self.jump_c / 2
