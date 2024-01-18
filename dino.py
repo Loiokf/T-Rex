@@ -2,7 +2,7 @@ import pygame
 
 
 class Dino:
-    jump_height = 24
+    jump_height = 26
 
     def __init__(self, screen):
         self.screen = screen

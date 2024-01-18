@@ -4,15 +4,17 @@ import controls
 from stats import Stats
 from screen_image import ScreenImage
 
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
 WIDTH = 900
 HEIGHT = 377
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 SPRITES_COLOR = (100, 100, 100)
-
 
 
 def start():
     pygame.init()
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("T-rex")
     icon = pygame.image.load("assets/images/dino-rex.png")
     pygame.display.set_icon(icon)
@@ -44,7 +46,7 @@ def start():
                 controls.move_dino(dino)
                 controls.create_and_remove_enemies(screen, cactuses, pteros, marios, stats)
                 controls.update(screen, screen_im, SPRITES_COLOR, dino,
-                                cactuses, pteros, stats)  # обновляем экран
+                                cactuses, pteros, stats)
             else:
                 controls.pause(screen, screen_im, SPRITES_COLOR, dino, cactuses, pteros, stats)
         else:
@@ -52,5 +54,7 @@ def start():
             controls.lose_events(screen, dino, cactuses, pteros, stats, screen_im)
         clock.tick(60)
 
+    screen.blit(dino, (900 // 2 - dino.get_width() // 2, 378 // 2 - dino.get_height() // 2))
+    pygame.display.flip()
 
 start()
