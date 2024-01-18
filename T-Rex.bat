@@ -1,0 +1,1 @@
+pyinstaller --onefile --noconsole --name "T-Rex" --icon "C:\Users\vdd10\Downloads\dino.ico" T-Rex.py

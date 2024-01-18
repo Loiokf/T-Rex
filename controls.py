@@ -1,4 +1,5 @@
 import pygame
+import sys
 from creater_enemies import easy_score, normal_score, hard_score
 from random import choice
 
@@ -7,7 +8,7 @@ def run_events(dino, stats):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            exit()
+            sys.exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE or event.key == pygame.K_UP:
                 if not dino.bending:
@@ -34,7 +35,7 @@ def run_events(dino, stats):
 def lose_events(screen, dino, cactuses, pteros, stats, screen_im):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            exit()
+            sys.exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 dino.restart(screen)
