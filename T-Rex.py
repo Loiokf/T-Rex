@@ -11,6 +11,7 @@ WIDTH = 900
 HEIGHT = 377
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 SPRITES_COLOR = (100, 100, 100)
+pygame.init()
 
 
 def start():
@@ -18,21 +19,21 @@ def start():
     pygame.display.set_caption("T-rex")
     icon = pygame.image.load("assets/images/dino-rex.png")
     pygame.display.set_icon(icon)
-    # pygame.mixer.music.load("assets/sounds/fon.wav")
-    # pygame.mixer.music.play(-1)
-    # pygame.mixer.music.set_volume(0.03)
+    pygame.mixer.music.load("assets/sounds/fon.wav")
+    pygame.mixer.music.play(-1)
+    pygame.mixer.music.set_volume(0.2)
     # pygame.mixer.music.load("assets/sounds/fon2.wav")
     # pygame.mixer.music.play(-1)
-    # pygame.mixer.music.set_volume(0.03)
+    # pygame.mixer.music.set_volume(0.3)
     # pygame.mixer.music.load("assets/sounds/fon3.wav")
     # pygame.mixer.music.play(-1)
-    # pygame.mixer.music.set_volume(0.03)
+    # pygame.mixer.music.set_volume(0.3)
     # pygame.mixer.music.load("assets/sounds/fon4.wav")
     # pygame.mixer.music.play(-1)
-    # pygame.mixer.music.set_volume(0.03)
-    pygame.mixer.music.load("assets/sounds/fon5.wav")
-    pygame.mixer.music.play(-1)
-    pygame.mixer.music.set_volume(0.03)
+    # pygame.mixer.music.set_volume(0.3)
+    # pygame.mixer.music.load("assets/sounds/fon5.wav")
+    # pygame.mixer.music.play(-1)
+    # pygame.mixer.music.set_volume(0.3)
     screen_im = ScreenImage(screen)
     dino = Dino(screen)
     cactuses = pygame.sprite.Group()
@@ -58,5 +59,6 @@ def start():
         clock.tick(60)
     screen.blit(dino, (900 // 2 - dino.get_width() // 2, 378 // 2 - dino.get_height() // 2))
     pygame.display.flip()
+
 
 start()

@@ -4,6 +4,9 @@ from creater_enemies import easy_score, normal_score, hard_score
 from random import choice
 
 
+screen = pygame.display.set_mode((900, 377))
+
+
 def run_events(dino, stats):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -69,7 +72,7 @@ def update(screen, screen_image, sprites_color, dino, cactuses, pteros, stats):
     pygame.display.flip()
     if pygame.sprite.spritecollideany(dino, cactuses) or pygame.sprite.spritecollideany(dino, pteros):
         sound = pygame.mixer.Sound("assets/sounds/lose.wav")
-        sound.set_volume(0.1)
+        sound.set_volume(0.9)
         sound.play()
         stats.run = False
 
